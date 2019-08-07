@@ -31,7 +31,7 @@ public:
     Nan::SetMethod(t, "unmask", BufferUtil::Unmask);
     Nan::SetMethod(t, "mask", BufferUtil::Mask);
     Nan::SetMethod(t, "merge", BufferUtil::Merge);
-    Nan::Set(target, Nan::New<String>("BufferUtil").ToLocalChecked(), t->GetFunction());
+    Nan::Set(target, Nan::New<String>("BufferUtil").ToLocalChecked(), Nan::GetFunction(t).ToLocalChecked());
   }
 
 protected:

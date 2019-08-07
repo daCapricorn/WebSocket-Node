@@ -111,7 +111,7 @@ public:
     Local<FunctionTemplate> t = Nan::New<FunctionTemplate>(New);
     t->InstanceTemplate()->SetInternalFieldCount(1);
     Nan::SetMethod(t, "isValidUTF8", Validation::IsValidUTF8);
-    Nan::Set(target, Nan::New<String>("Validation").ToLocalChecked(), t->GetFunction());
+    Nan::Set(target, Nan::New<String>("Validation").ToLocalChecked(), Nan::GetFunction(t).ToLocalChecked());
   }
 
 protected:
